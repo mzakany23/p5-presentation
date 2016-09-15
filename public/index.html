@@ -1,0 +1,269 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>p5 Selleck Maze</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style type="text/css">
+			.left {
+				float: left;
+				width: 50%;
+			}
+
+			.right {
+				float: left;
+				width: 50%;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Introduction to p5.js</h1>
+					<h3>Navigating a basic maze</h3>
+					<small>Lessons learned using p5</small>
+					<br>
+						<a href="https://maze-gen.firebaseapp.com/" class="navigate-down">
+							<img width="178" height="238" data-src="./images/maze.png" alt="Down arrow">
+						</a>
+					<p>
+						<small>Created by <a href="http://michaelzakanyresume.me">Michael C. Zakany</a> / <a href="https://twitter.com/mzakany">@mzakany</a> / <a href="https://github.com/mzakany23/p5-maze-generator-coding-for-rainbows">github: mzakany23</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h3>d3.js</h3>
+						<img src="./images/d3.png" style='width: 100%; height: 100%;'>
+					</section>
+					<section>
+						<h3>Phaser.io</h3>
+						<img src="./images/phaser.png" style='width: 100%; height: 100%;'>
+					</section>
+					<section>
+						<h3>Phaser.io</h3>
+						<img src="./images/phaseex1.png" style='width: 100%; height: 100%;'>
+					</section>
+					<section>
+						<h3>Phaser.io</h3>
+						<img src="./images/phaseex2.png" style='width: 100%; height: 100%;'>
+					</section>
+					<section>
+						<h3>Easeljs</h3>
+						<img src="./images/easljs.png" style='width: 100%; height: 100%;'>
+					</section>
+
+					<section>
+						<h3>Easeljs</h3>
+						<img src="./images/easeladd.png" style='width: 100%; height: 100%;'>
+					</section>
+
+					<section>
+						<h3>Easeljs</h3>
+						<img src="./images/bmw.png" style='width: 100%; height: 100%;'>
+					</section>
+
+					<section>
+						<h1>p5.js</h1>
+						<img src="./images/p5.png">
+						<p>
+							<blockquote>
+								"p5.js was created by <a href="http://lauren-mccarthy.com/">Lauren Mccarthy</a> and is developed by a community of collaborators, with support from the <a href="http://processing.org/foundation/">Processing Foundation</a> and <a href="https://tisch.nyu.edu/itp">NYU ITP</a>."
+							</blockquote>
+						</p>
+					</section>
+
+					<section>
+						<h3>Processing</h3>
+						<img src="./images/processing.png" style='width: 100%; height: 100%;'>
+					</section>
+
+					<section>
+						<h3>Documentation</h3>
+						<img src="./images/p5-doc.png" style='width: 100%; height: 100%;'>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>P5 Weekend Journey:</h2>
+						<p>(A+B+C+D)/4==Selleck-Maze</p>
+						<img width='300' height='200' src="./images/gol.gif">
+						<img width='300' height='200' src="./images/spirograph.gif">
+						<img width='300' height='200' src="./images/shiffman.gif">
+						<br>
+						<img width='300' height='200' src="./images/shiffman-maze.gif">
+						<img width='300' height='200' src="./images/maze-gen.gif">
+						<br>
+					</section>
+
+					<section>
+						<h3>Selleck Maze Waterfall</h3>
+						<p><a href="https://maze-gen.firebaseapp.com/">https://maze-gen.firebaseapp.com/</a></p>
+						<img src="./images/mazegif.gif">
+					</section>
+					
+					<section>
+						<h3>Daniel Shiffman: Coding for Rainbows</h3>
+						<img src="./images/cfr.png">
+					</section>
+
+					<section>
+						<h3>Maze Generator</h3>
+						<p><a href="https://www.youtube.com/watch?v=HyK_Q5rrcr4">https://www.youtube.com/watch?v=HyK_Q5rrcr4</a></p>
+						<img style='width: 100%; height: 100%;' src="./images/shiffman-maze.gif">
+					</section>
+
+					<section>
+					<h2>Constructing a maze</h2>
+					<h4>Project Guidlines</h4>
+					<br>
+					<ol>
+						<li>Make a matrix (2D Array) n*n</li>
+						<li>Each postion matrix[n] will be an instance of cell class</li>
+						<li>Maze class will handle drawing matrix based on rules</li>
+						<li>Game class handles game rules and player turns</li>
+						<li>Player class will know how to traverse the maze</li>
+						<li>UI class handles dom updating with vanilla js (no jquery)</li>
+						<li>Index is where globals live and init code is ran</li>
+					</ol>
+				</section>
+
+				</section>
+					<section>
+						<section class='left'>
+							<h1>Grid:make grid</h1>
+							<img src="./images/grid1.png">
+						</section>
+				
+						<section>
+							<h1>Grid:neighbors</h1>
+							<p>cell.getNeighbors()</p>
+							<img src="./images/grid2.png">
+						</section>
+
+						<section>
+							<h2>Grid:line checking</h2>
+							<img src="./images/line.png">
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<h2>Grid:make grid</h2>
+							<p>1d array</p>
+							<img width='600px;' src="./images/maze2d.png">
+							<img width='600px;' src="./images/1dex.png">
+						</section>
+
+						<section>
+							<h2>Grid:make grid</h2>
+							<p>grabbing columns with 1d array</p>
+							<img width='900px;' src="./images/position.png">
+							<img width='900px;' src="./images/1dlookup.png">
+						</section>
+
+						<section class='left'>
+							<h1>Grid:make grid</h1>
+							<p>2d array</p>
+							<img width='600px;' src="./images/2dgrid.png">
+							<img width='600px;' src="./images/2dex.png">
+						</section>
+
+						<section class='left'>
+							<h1>Grid:make grid</h1>
+							<p>2d array lookup</p>
+							<img width='600px;' src="./images/2dex.png">
+							<img width='600px;' src="./images/2dlookup.png">
+						</section>
+
+						<section>
+							<h2>Grid:neighbors</h2>
+							<img width='700px;' src="./images/getneighbors.png">
+						</section>
+
+						<section>
+							<h2>Grid:line checking</h2>
+							<img width='900;' height='350' src="./images/moveline.png">
+						</section>
+
+						<section>
+							<h2>P5:Instance Mode</h2>
+							<p>Global init</p>
+							<img width='600px;' src="./images/globalex.png">
+						</section>
+
+						<section>
+							<h2>Globals vs instance mode</h2>
+							<p>Instance Mode init</p>
+							<img width='700px;' src="./images/instancemode.png">
+						</section>
+
+						<section>
+							<h2>Globals vs instance mode</h2>
+							<p>Instance Mode init</p>
+							<img width='900px;' src="./images/instancemodeex.png">
+							<img width='900px;' src="./images/instancemodeex1.png">
+						</section>
+
+						<section>
+							<h2>Events:p5 Docs</h2>
+							<img width='800' height='500' src="./images/events.png">
+						</section>
+
+						<section>
+							<h2>Events</h2>
+							<img width='900' height='500' src="./images/events1.png">
+						</section>
+					</section>
+
+					<section>
+						<h1>Next Steps?</h1>
+						<img width='900' height='500' src="./images/nextsteps.png">
+					</section>
+
+					<section>
+						<a href="https://maze-gen.firebaseapp.com/"><h1>Demo</h1></a>
+						<img width="178" height="238" data-src="./images/maze.png" alt="Down arrow">
+					</section>
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

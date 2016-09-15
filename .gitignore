@@ -3,3 +3,5 @@ node_modules
 gulp.js
 img
 demo.html
+firebase.json
+.firebaserc
