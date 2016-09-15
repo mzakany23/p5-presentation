@@ -49,32 +49,17 @@
 						<small>Created by <a href="http://michaelzakanyresume.me">Michael C. Zakany</a> / <a href="https://twitter.com/mzakany">@mzakany</a></small>
 					</p>
 				</section>
+
 				<section>
 					<section>
-						<h2>P5 Weekend Journey:</h2>
-						<p>(A+B+C+D)/4==Selleck-Maze</p>
-						<img width='300' height='200' src="./public/images/gol.gif">
-						<img width='300' height='200' src="./public/images/spirograph.gif">
-						<img width='300' height='200' src="./public/images/shiffman.gif">
-						<br>
-						<img width='300' height='200' src="./public/images/shiffman-maze.gif">
-						<img width='300' height='200' src="./public/images/maze-gen.gif">
-						<br>
+						<h3>Phaser.io</h3>
+						<img src="./public/images/phaser.png" style='width: 100%; height: 100%;'>
 					</section>
-					
 					<section>
-						<h3>Daniel Shiffman: Maze Generator</h3>
-						<p><a href="https://www.youtube.com/watch?v=HyK_Q5rrcr4">https://www.youtube.com/watch?v=HyK_Q5rrcr4</a></p>
-						<img src="./public/images/shiffman-maze.gif">
+						<h3>Easeljs</h3>
+						<img src="./public/images/easljs.png" style='width: 100%; height: 100%;'>
 					</section>
 
-					<section>
-						<h3>Selleck Maze Waterfall</h3>
-						<p><a href="https://maze-gen.firebaseapp.com/">https://maze-gen.firebaseapp.com/</a></p>
-						<img src="./public/images/mazegif.gif">
-					</section>
-				</section>
-				<section>
 					<section>
 						<h1>p5.js</h1>
 						<img src="./public/images/p5.png">
@@ -89,18 +74,48 @@
 						<img src="./public/images/p5-doc.png" style='width: 100%; height: 100%;'>
 					</section>
 				</section>
+
 				<section>
+					<section>
+						<h2>P5 Weekend Journey:</h2>
+						<p>(A+B+C+D)/4==Selleck-Maze</p>
+						<img width='300' height='200' src="./public/images/gol.gif">
+						<img width='300' height='200' src="./public/images/spirograph.gif">
+						<img width='300' height='200' src="./public/images/shiffman.gif">
+						<br>
+						<img width='300' height='200' src="./public/images/shiffman-maze.gif">
+						<img width='300' height='200' src="./public/images/maze-gen.gif">
+						<br>
+					</section>
+					<section>
+						<h3>Daniel Shiffman: Coding for Rainbows</h3>
+						<img src="./public/images/cfr.png">
+					</section>
+					<section>
+						<h3>Maze Generator</h3>
+						<p><a href="https://www.youtube.com/watch?v=HyK_Q5rrcr4">https://www.youtube.com/watch?v=HyK_Q5rrcr4</a></p>
+						<img style='width: 100%; height: 100%;' src="./public/images/shiffman-maze.gif">
+					</section>
+
+					<section>
+						<h3>Selleck Maze Waterfall</h3>
+						<p><a href="https://maze-gen.firebaseapp.com/">https://maze-gen.firebaseapp.com/</a></p>
+						<img src="./public/images/mazegif.gif">
+					</section>
+				</section>
+				
+				<section id='fragments'>
 					<h2>Constructing a maze</h2>
 					<h4>Project Guidlines</h4>
 					<br>
 					<ol>
 						<li>Make a matrix (2D Array) n*n</li>
-						<li>Each postion matrix[n] will be an instance of cell class</li>
-						<li>Maze class will handle drawing matrix based on rules</li>
-						<li>Game class handles game rules and player turns</li>
-						<li>Player class will know how to traverse the maze</li>
-						<li>UI class handles dom updating with vanilla js (no jquery)</li>
-						<li>Index is where globals live and init code is ran</li>
+						<li class='fragment'>Each postion matrix[n] will be an instance of cell class</li>
+						<li class='fragment'>Maze class will handle drawing matrix based on rules</li>
+						<li class='fragment'>Game class handles game rules and player turns</li>
+						<li class='fragment'>Player class will know how to traverse the maze</li>
+						<li class='fragment'>UI class handles dom updating with vanilla js (no jquery)</li>
+						<li class='fragment'>Index is where globals live and init code is ran</li>
 					</ol>
 				</section>
 					<section>
@@ -108,7 +123,10 @@
 							<h1>Grid:make grid</h1>
 							<img src="./public/images/grid1.png">
 						</section>
-
+						<section>
+							<h3>Wikipedia: Recursive Backtracker</h3>
+							<img style='width: 100%; height: 100%;'src="./public/images/recursivebt.png">
+						</section>
 						<section>
 							<h1>Grid:neighbors</h1>
 							<p>cell.getNeighbors()</p>
@@ -124,7 +142,15 @@
 					<section>
 						<section>
 							<h2>Grid:make grid</h2>
+							<p>1d array</p>
 							<img width='700px;' src="./public/images/maze2d.png">
+							<img width='700px;' src="./public/images/position.png">
+						</section>
+
+						<section class='left'>
+							<h1>Grid:make grid</h1>
+							<p>2d array</p>
+							<img style='width:100%; height:100%;' src="./public/images/2dgrid.png">
 						</section>
 
 						<section>
@@ -138,11 +164,8 @@
 						</section>
 
 						<section>
-							<h4>Grid:Access Grid</h4>
-							<p>global:</p>
+							<h4>Globals vs Instance Mode:</h4>
 							<img width='800;' height='200' src="./public/images/gridinit.png">
-							<p>player class:</p>
-							<img width='800;' height='200' src="./public/images/position.png">
 						</section>
 
 						<section>
@@ -153,7 +176,9 @@
 					</section>
 
 					<section>
-						<h1>code Overview</h1>
+						<a href="https://maze-gen.firebaseapp.com/"><h1>Demo</h1></a>
+						<img width="178" height="238" data-src="./public/images/maze.png" alt="Down arrow">
+						
 					</section>
 			</div>
 		</div>

@@ -2,3 +2,4 @@ node_modules
 .json
 gulp.js
 img
+demo.html
